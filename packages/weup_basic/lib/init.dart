@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -8,6 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:weup_basic/app/site.dart';
 import 'package:weup_basic/setup.dart';
+import 'package:path_provider/path_provider.dart' as path_provider;
 
 import 'application.dart';
 import 'global.dart';
@@ -36,6 +38,12 @@ void initApp({
   WidgetsFlutterBinding.ensureInitialized();
   HttpOverrides.global = MyHttpOverrides();
 
+  siteApp = site;
+
+  if (!kIsWeb) {
+    appDocumentDirectory =
+        await path_provider.getApplicationDocumentsDirectory();
+  }
   String? path;
   if (appDocumentDirectory != null) {
     path = appDocumentDirectory!.path;

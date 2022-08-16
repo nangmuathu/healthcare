@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'common/helper/constant.dart';
 import 'common/helper/system_utils.dart';
 import 'global.dart';
 
@@ -53,7 +52,7 @@ class _ApplicationState extends State<Application> {
     return MaterialApp(
       navigatorKey: Application.navigator,
       debugShowCheckedModeBanner: false,
-      title: AppConstant.APP_NAME,
+      title: siteApp.title,
       initialRoute: widget.initialRoute,
       onGenerateRoute: widget.onGenerateRoute,
       themeMode: widget.themeMode,

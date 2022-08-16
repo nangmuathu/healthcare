@@ -1048,6 +1048,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.7.5"
+  weup_authentication:
+    dependency: "direct main"
+    description:
+      path: "packages/weup_authentication"
+      relative: true
+    source: path
+    version: "0.0.1"
   weup_basic:
     dependency: "direct main"
     description:

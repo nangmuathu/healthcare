@@ -1,4 +1,3 @@
-import 'package:app_healthcare/app/app_lib.dart';
 import 'package:app_healthcare/presentation/resources/routes_manager.dart';
 import 'package:app_healthcare/presentation/resources/theme_manager.dart';
 import 'package:weup_basic/app/site.dart';
@@ -12,9 +11,7 @@ void main() {
     initialRoute: Routes.initialRoute,
     boxes: ['account', 'app'],
     onGenerateRoute: RouteGenerator.getRoute,
-    providers: [
-      ChangeNotifierProvider.value(value: appLib),
-    ],
+    providers: [],
     theme: getApplicationTheme(),
     startLocale: vnLocale,
     fallbackLocale: vnLocale,

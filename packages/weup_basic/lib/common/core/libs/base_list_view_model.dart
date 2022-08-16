@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:rxdart/rxdart.dart';
+import 'package:weup_basic/app/app_lib.dart';
 
-import '../../helper/constant.dart';
 import '../../helper/system_utils.dart';
 import '../../resource/enum_resource.dart';
 import '../sys/api_response.dart';
@@ -71,7 +70,7 @@ abstract class BaseListViewModel<T> extends BaseViewModel {
       _firstLoad = false;
     }
     // refreshController?.setEndPoint(_items.length < (app.config.limit ?? AppConstant.LIMIT));
-    refreshController?.setEndPoint(_items.length < (AppConstant.LIMIT));
+    refreshController?.setEndPoint(_items.length < (appLib.config.limit ?? 10));
     if (refreshController!.isRefreshing) {
       if (!empty(_keyword)) return;
       _keyword = '';
@@ -157,8 +156,9 @@ class BaseListItem<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (searching || firstLoad)
+    if (searching || firstLoad) {
       return const LoadingComp(backgroundColor: Colors.white);
+    }
     if (!searching && items.isEmpty) return const NoDataComp();
     return child;
   }
