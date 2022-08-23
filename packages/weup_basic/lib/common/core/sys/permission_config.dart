@@ -1,7 +1,8 @@
-import 'package:weup_basic/application.dart';
 import 'package:weup_basic/common/core/app_core.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+
+import '../../../global.dart';
 
 class PermissionConfig {
   PermissionConfig._internal();
@@ -26,7 +27,7 @@ class PermissionConfig {
         return false;
       case PermissionStatus.permanentlyDenied:
         showDialog(
-            context: Application.navigator.currentContext!,
+            context: navigator.currentState!.context,
             builder: (context) =>
                 PermissionDialog(title: title, content: content));
         return false;
@@ -47,7 +48,7 @@ class PermissionConfig {
     }).then((value) {
       if (_requestTitle.isNotEmpty) {
         showDialog(
-            context: Application.navigator.currentContext!,
+            context: navigator.currentState!.context,
             builder: (context) => PermissionDialog(
                 title: 'Thông báo',
                 content:

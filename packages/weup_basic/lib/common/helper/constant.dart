@@ -1,29 +1,29 @@
 class HttpConstant {
-  static const String CONNECT_ERROR = 'Không có kết nối. Vui lòng thử lại sau';
-  static const String UNKNOWN = 'Đã có lỗi xảy ra. Vui lòng thử lại sau';
-  static const String INTERNAL_ERROR =
+  static const String connectError = 'Không có kết nối. Vui lòng thử lại sau';
+  static const String unknown = 'Đã có lỗi xảy ra. Vui lòng thử lại sau';
+  static const String internalError =
       'Lỗi máy chủ nội bộ. Vui lòng thử lại sau';
-  static const String TIME_OUT = 'Hết hạn yêu cầu. Vui lòng thử lại sau';
-  static const String BAD_GATEWAY = 'Server bận. Vui lòng thử lại sau';
+  static const String timeOut = 'Hết hạn yêu cầu. Vui lòng thử lại sau';
+  static const String badGateway = 'Server bận. Vui lòng thử lại sau';
 
-  static const String NOT_FOUND =
+  static const String notFound =
       'Không tìm thấy nội dung yêu cầu. Vui lòng thử lại sau';
-  static const String FORBIDDEN = 'Truy cập bị hạn chế. Vui lòng thử lại sau';
-  static const String TOKEN_EXPIRED =
+  static const String forbidden = 'Truy cập bị hạn chế. Vui lòng thử lại sau';
+  static const String tokenExpired =
       'Phiên làm việc đã hết hạn. Vui lòng đăng nhập lại';
 }
 
 class LanguageCodeConstant {
-  static const String VI = 'vi';
-  static const String EN = 'en';
+  static const String vi = 'vi';
+  static const String en = 'en';
 }
 
 class LanguageCountryConstant {
-  static const String VI = 'VN';
-  static const String EN = 'US';
+  static const String vi = 'VN';
+  static const String en = 'US';
 }
 
 class ThemeModeConstant {
-  static const String DARK = 'dark';
-  static const String LIGHT = 'light';
+  static const String dark = 'dark';
+  static const String light = 'light';
 }

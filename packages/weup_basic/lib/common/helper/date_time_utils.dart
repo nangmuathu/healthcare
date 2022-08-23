@@ -2,11 +2,11 @@ import 'package:weup_basic/common/core/sys/base_function.dart';
 import 'package:intl/intl.dart';
 
 class DateTimeUtils {
-  static const String DDMMYYYYHMS = 'dd/MM/yyyy HH:mm:ss';
-  static const String YYYYMMDDHMS = 'yyyy/MM/dd HH:mm:ss';
-  static const String HHMM = 'HH:mm';
-  static DateTime get now => DateTime.now();
-  static const String HHMM_DDMMYYYY = 'HH:mm, dd/MM/yyyy';
+  // static const String DDMMYYYYHMS = 'dd/MM/yyyy HH:mm:ss';
+  // static const String YYYYMMDDHMS = 'yyyy/MM/dd HH:mm:ss';
+  // static const String HHMM = 'HH:mm';
+  // static DateTime get now => DateTime.now();
+  // static const String HHMM_DDMMYYYY = 'HH:mm, dd/MM/yyyy';
 
   static String? convertTo(
       String data, String currentPattern, String toPattern) {
@@ -65,11 +65,11 @@ class DateTimeUtils {
     return null;
   }
 
-  static DateTime get firstDayOfWeek =>
-      now.subtract(Duration(days: now.weekday - 1));
-
-  static DateTime get lastDayOfWeek =>
-      now.add(Duration(days: DateTime.daysPerWeek - now.weekday));
+  // static DateTime get firstDayOfWeek =>
+  //     now.subtract(Duration(days: now.weekday - 1));
+  //
+  // static DateTime get lastDayOfWeek =>
+  //     now.add(Duration(days: DateTime.daysPerWeek - now.weekday));
 
   static int getSeconds() {
     return DateTime.now().millisecondsSinceEpoch ~/ 1000;

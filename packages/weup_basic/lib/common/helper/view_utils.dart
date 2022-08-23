@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import '../../application.dart';
+import '../../global.dart';
 import '../extension/context_extension.dart';
 
 enum ToastMode {
@@ -11,7 +11,7 @@ enum ToastMode {
 }
 
 class ViewUtils {
-  static BuildContext? get _ctx => Application.navigator.currentContext;
+  static BuildContext? get _ctx => navigator.currentContext;
 
   static void hideKeyboard({BuildContext? context}) =>
       FocusScope.of(context!).unfocus();

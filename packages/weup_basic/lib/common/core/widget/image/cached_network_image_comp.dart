@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../helper/system_utils.dart';
+import '../../../../app/app_utils.dart';
 import '../../../resource/image_resource.dart';
 
 class CachedNetworkImageComp extends StatelessWidget {

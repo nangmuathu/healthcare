@@ -60,17 +60,17 @@ class LocalStorage {
 
 class StorageKey {
   StorageKey._();
-  static String MESSAGE_CREATE_SUCCESSFUL_ACCOUNT = 'message_create_successful_account_${LocalStorage.get(USER_ID)}';
-  static String POPUP_UPDATE_USER = 'popup_update_user_${LocalStorage.get(USER_ID)}';
-  static const String THEME = 'theme';
-  static const String INTRODUCE = 'introduce';
-  static const String ACCESS_TOKEN = 'access_token';
-  static const String USER_ID = 'user_id';
-  static const String SELECT_TOPIC = 'select_topic';
-  static const String CONFIG = 'config';
-  static const String TYPE_USER = 'TYPE_USER';
-  static const String KEY_PHYSICIAN_ID = 'key_physician_id';
-  static const String LIST_POP_UP = 'list_pop_up';
-  static const String ACCOUNT = 'account';
-  static const String LOGIN_PHONE = 'login_phone';
+  // static String MESSAGE_CREATE_SUCCESSFUL_ACCOUNT = 'message_create_successful_account_${LocalStorage.get(USER_ID)}';
+  // static String POPUP_UPDATE_USER = 'popup_update_user_${LocalStorage.get(USER_ID)}';
+  // static const String THEME = 'theme';
+  // static const String INTRODUCE = 'introduce';
+  // static const String ACCESS_TOKEN = 'access_token';
+  // static const String USER_ID = 'user_id';
+  // static const String SELECT_TOPIC = 'select_topic';
+  // static const String CONFIG = 'config';
+  // static const String TYPE_USER = 'TYPE_USER';
+  // static const String KEY_PHYSICIAN_ID = 'key_physician_id';
+  // static const String LIST_POP_UP = 'list_pop_up';
+  // static const String ACCOUNT = 'account';
+  // static const String LOGIN_PHONE = 'login_phone';
 }

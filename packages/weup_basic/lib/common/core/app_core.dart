@@ -25,7 +25,6 @@ export 'widget/bottom_sheet/pick_img_bottomsheet.dart';
 ///D
 export 'widget/main_layout.dart';
 export 'widget/dialog/error_dialog_comp.dart';
-export 'widget/dialog/date_picker_custom_dialog.dart';
 export 'widget/dialog/permission_dialog.dart';
 
 ///I

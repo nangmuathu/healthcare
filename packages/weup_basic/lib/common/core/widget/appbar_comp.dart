@@ -57,7 +57,7 @@ class AppBarComp extends PreferredSize {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1),
         flexibleSpace: flexibleSpace,
-        backgroundColor: backgroundColor ?? appStyle.primaryColor,
+        backgroundColor: backgroundColor ?? appStyle.appBarTheme.backgroundColor,
         elevation: elevation,
         automaticallyImplyLeading: isLeading,
         leading: iconLeading ??

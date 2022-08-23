@@ -1,15 +1,14 @@
 import 'package:intl/intl.dart';
 
-const String ddMMyyyyHms = 'dd/MM/yyyy HH:mm:ss';
-const String YYYYMMDDHMS = 'yyyy/MM/dd HH:mm:ss';
-const String HHmm = 'HH:mm';
-const String HHmma = 'HH:mm a';
+const String ddMMYyyyHms = 'dd/MM/yyyy HH:mm:ss';
+const String yyyyMMDDHMS = 'yyyy/MM/dd HH:mm:ss';
+const String hhMM = 'HH:mm';
+const String hhMMa = 'HH:mm a';
 const String ddMM = 'dd/MM';
-const String ddMMyyyy = 'dd/MM/yyyy';
+const String ddMYyyy = 'dd/MM/yyyy';
 const String yyyyMMdd = 'yyyy-MM-dd';
-const String ddMMyyyy_ = 'dd-MM-yyyy';
-const String yyyyMMddTHHmmssSSS = "yyyy-MM-dd'T'HH:mm:ss.SSS";
-const String MMyyyy = 'MM/yyyy';
+const String ddMMYyyy_ = 'dd-MM-yyyy';
+const String mmYyyy = 'MM/yyyy';
 const String dd = 'dd';
 
 extension DateTimeExtention on DateTime {
@@ -63,31 +62,31 @@ extension DateTimeExtention on DateTime {
 
   /// thứ(chữ), ngày tháng năm
   String get dayOfWeekAndDate =>
-      '$dayOfWeekString, ${convertToString(pattern: ddMMyyyy)}';
+      '$dayOfWeekString, ${convertToString(pattern: ddMYyyy)}';
 
   /// thứ (chữ), ngày tháng năm, giờ
   String get dayOfWeekAndDateAndTime =>
-      '$dayOfWeekString, ${convertToString(pattern: ddMMyyyy)}, ${convertToString(pattern: HHmm)}';
+      '$dayOfWeekString, ${convertToString(pattern: ddMYyyy)}, ${convertToString(pattern: hhMM)}';
 
   /// giờ, ngày
   String get hourAndDateTime =>
-      '${convertToString(pattern: HHmm)}, ${convertToString(pattern: ddMMyyyy)}';
+      '${convertToString(pattern: hhMM)}, ${convertToString(pattern: ddMYyyy)}';
 
   /// ngày, sáng - chiều
   String get dateTimeInTable =>
-      '${convertToString(pattern: ddMMyyyy)} - $dateTimeToVnHour';
+      '${convertToString(pattern: ddMYyyy)} - $dateTimeToVnHour';
 
   /// thứ(số), ngày tháng năm, giờ
   String get dateTimeInWeather =>
-      '$dayOfWeekNumber, ${convertToString(pattern: ddMMyyyy)}';
+      '$dayOfWeekNumber, ${convertToString(pattern: ddMYyyy)}';
 
   /// thứ(số), ngày tháng năm - giờ
   String get dayOfWeekDateTimeVN =>
-      '$dayOfWeekString ${convertToString(pattern: ddMMyyyy)} - ${convertToString(pattern: HHmm)}';
+      '$dayOfWeekString ${convertToString(pattern: ddMYyyy)} - ${convertToString(pattern: hhMM)}';
 
   /// ngày - giờ
   String get dateTimeString =>
-      '${convertToString(pattern: ddMMyyyy)} - ${convertToString(pattern: HHmm)}';
+      '${convertToString(pattern: ddMYyyy)} - ${convertToString(pattern: hhMM)}';
 
   /// thứ(số), ngày tháng
   String get dateTimeToWeekdayAndDayMonth =>
@@ -116,7 +115,7 @@ extension DateTimeExtention on DateTime {
     return DateTime(year, month, day, hour.hour, hour.minute);
   }
 
-  String get dateTimeToVnHour => convertToString(pattern: HHmma)
+  String get dateTimeToVnHour => convertToString(pattern: hhMMa)
       .replaceAll("PM", "chiều")
       .replaceAll("AM", "sáng");
 

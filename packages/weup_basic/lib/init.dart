@@ -7,14 +7,15 @@ import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
-import 'package:weup_basic/app/site.dart';
+import 'package:weup_basic/app/app_config.dart';
+import 'package:weup_basic/common/core/widget/root_app.dart';
 import 'package:weup_basic/setup.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 
 import 'application.dart';
 import 'global.dart';
 import 'libs/setting_lib.dart';
-import 'managers/languague_manger.dart';
+import 'app/managers/language_manger.dart';
 
 void initApp({
   required Site site,
@@ -34,6 +35,7 @@ void initApp({
   List<DeviceOrientation>? orientations,
   final Locale? fallbackLocale,
   List<SingleChildWidget>? providers,
+  LoginOption loginOption = LoginOption.none,
 }) async {
   WidgetsFlutterBinding.ensureInitialized();
   HttpOverrides.global = MyHttpOverrides();
@@ -41,8 +43,7 @@ void initApp({
   siteApp = site;
 
   if (!kIsWeb) {
-    appDocumentDirectory =
-        await path_provider.getApplicationDocumentsDirectory();
+    appDocumentDirectory = await path_provider.getApplicationDocumentsDirectory();
   }
   String? path;
   if (appDocumentDirectory != null) {
@@ -68,8 +69,8 @@ void initApp({
     });
   }
   appOrientations = orientations ?? [DeviceOrientation.portraitUp];
-  await SystemChrome.setPreferredOrientations(
-      orientations ?? [DeviceOrientation.portraitUp]);
+  await SystemChrome.setPreferredOrientations(orientations ?? [DeviceOrientation.portraitUp]);
+  AppConfigs.loginOption = loginOption;
 
   runApp(
     MultiProvider(
@@ -80,17 +81,19 @@ void initApp({
         useOnlyLangCode: true,
         supportedLocales: List<Locale>.from(supportedLocales ?? <Locale>[]),
         path: LanguageManager.instance().assetsPathLocations,
-        child: Application(
-          startLocale: startLocale,
-          theme: theme,
-          darkTheme: darkTheme,
-          supportedLocales: List<Locale>.from(supportedLocales ?? <Locale>[]),
-          themeMode: themeMode,
-          fallbackLocale: fallbackLocale,
-          onGenerateRoute: onGenerateRoute,
-          initialRoute: initialRoute,
-          callInMyApps: callInMyApps,
-          home: home,
+        child: RootApp(
+          child: Application(
+            startLocale: startLocale,
+            theme: theme,
+            darkTheme: darkTheme,
+            supportedLocales: List<Locale>.from(supportedLocales ?? <Locale>[]),
+            themeMode: themeMode,
+            fallbackLocale: fallbackLocale,
+            onGenerateRoute: onGenerateRoute,
+            initialRoute: initialRoute,
+            callInMyApps: callInMyApps,
+            home: home,
+          ),
         ),
       ),
     ),

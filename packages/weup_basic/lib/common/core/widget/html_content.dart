@@ -17,8 +17,8 @@ class HtmlComp extends StatelessWidget {
     return Html(
       data: data,
       onLinkTap: (url, _, __, ___) async {
-        if (await canLaunch(url!)) {
-          await launch(url);
+        if (await canLaunchUrl(Uri.parse(url!))) {
+          await launchUrl(Uri.parse(url));
         } else {
           throw "Could not launch $url";
         }

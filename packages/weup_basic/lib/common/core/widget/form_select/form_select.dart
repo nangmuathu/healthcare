@@ -1,8 +1,9 @@
 import 'package:weup_basic/common/core/widget/form_select/select_bottom_list.dart';
 import 'package:weup_basic/common/core/widget/custom_text_input.dart';
 import 'package:weup_basic/common/helper/app_common.dart';
-import 'package:weup_basic/common/helper/system_utils.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../app/app_utils.dart';
 
 class FormSelect<T> extends StatefulWidget {
   final String? name;

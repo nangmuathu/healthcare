@@ -1,9 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:weup_basic/common/helper/app_common.dart';
-
-import '../sys/api_response.dart';
 
 mixin PostMixin {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -36,6 +32,6 @@ mixin PostMixin {
 
   void onSubmit(BuildContext context, {ValueChanged? callback});
 
-  bool checkFail(ApiResponse? response) =>
-      response?.code != HttpStatus.ok && response?.data == null;
+  // bool checkFail(ApiResponse? response) =>
+  //     response?.code != HttpStatus.ok && response?.data == null;
 }

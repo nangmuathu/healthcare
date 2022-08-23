@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
-import 'common/helper/system_utils.dart';
+import '../../app/app_utils.dart';
 import 'global.dart';
 
 class Application extends StatefulWidget {
@@ -15,6 +14,7 @@ class Application extends StatefulWidget {
   final RouteFactory? onGenerateRoute;
   final List<AsyncCallbackFunc>? callInMyApps;
   final Widget? home;
+
   const Application(
       {Key? key,
       this.startLocale,
@@ -28,9 +28,6 @@ class Application extends StatefulWidget {
       this.callInMyApps,
       this.home})
       : super(key: key);
-
-  static final GlobalKey<NavigatorState> navigator =
-      GlobalKey<NavigatorState>();
 
   @override
   State<Application> createState() => _ApplicationState();
@@ -50,25 +47,20 @@ class _ApplicationState extends State<Application> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: Application.navigator,
+      navigatorKey: navigator,
       debugShowCheckedModeBanner: false,
       title: siteApp.title,
       initialRoute: widget.initialRoute,
       onGenerateRoute: widget.onGenerateRoute,
       themeMode: widget.themeMode,
       darkTheme: widget.darkTheme,
-      theme: widget.darkTheme,
-      home: (widget.onGenerateRoute == null)
-          ? (widget.home ?? const _NoRoute())
-          : null,
+      theme: widget.theme,
+      home: (widget.onGenerateRoute == null) ? (widget.home ?? const _NoRoute()) : null,
       locale: context.locale,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
-      builder: (context, child) => MediaQuery(
-          child: child!,
-          data: MediaQuery.of(context).copyWith(
-              textScaleFactor:
-                  MediaQuery.of(context).textScaleFactor.clamp(1.0, 1.1))),
+      builder: (context, child) =>
+          MediaQuery(child: child!, data: MediaQuery.of(context).copyWith(textScaleFactor: MediaQuery.of(context).textScaleFactor.clamp(1.0, 1.1))),
     );
   }
 }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weup_basic/common/extension/app_extension.dart';
 
+import '../../../../app/app_utils.dart';
 import '../../../../global.dart';
-import '../../../helper/system_utils.dart';
 import '../../../resource/svg_resource.dart';
 import '../item_scale_animation_comp.dart';
 import '../no_data_comp.dart';

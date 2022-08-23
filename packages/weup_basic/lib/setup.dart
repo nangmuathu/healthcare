@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:provider/single_child_widget.dart';
-import 'package:weup_basic/app/app_lib.dart';
 import 'package:weup_basic/import.dart';
 
 List<SingleChildWidget> loadProviders([List<SingleChildWidget>? inputs]) {

@@ -108,7 +108,7 @@ abstract class BaseViewModel extends ChangeNotifier {
       return !(result.isNotEmpty && result[0].rawAddress.isNotEmpty);
     } on SocketException catch (_) {
       appNavigator.dialog(BaseErrorDialog(
-        content: HttpConstant.CONNECT_ERROR,
+        content: HttpConstant.connectError,
         textButtonConfirm: 'Thử lại',
         mConfirm: () {
           setStatus(Status.loading);

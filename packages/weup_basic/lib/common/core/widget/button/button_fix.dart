@@ -15,13 +15,13 @@ class ButtonFixStyle {
       this.z = 8.0,
       this.tappedZ = 3.0});
 
-  static const RED =
+  static const red =
       ButtonFixStyle(topColor: Color(0xFFc62f2f), backColor: Color(0xFF922525));
-  static const BLUE =
+  static const blue =
       ButtonFixStyle(topColor: Color(0xFF25a09c), backColor: Color(0xFF197572));
-  static const WHITE =
+  static const white =
       ButtonFixStyle(topColor: Color(0xFFffffff), backColor: Color(0xFFCFD8DC));
-  static const YELLOW =
+  static const yellow =
       ButtonFixStyle(topColor: Color(0xffFFCC28), backColor: Color(0xffb68e04));
 }
 
@@ -37,7 +37,7 @@ class ButtonFix extends StatefulWidget {
     Key? key,
     this.onPressed,
     required this.title,
-    this.style = ButtonFixStyle.RED,
+    this.style = ButtonFixStyle.red,
     this.height = 55.0,
     this.titleStyle,
     this.radius,
